@@ -1,0 +1,84 @@
+package randomnumber;
+
+import java.util.*;
+import java.io.*;
+
+public class firsttry_simplify {	
+
+	public int int_list2(int x) {
+		Random num = new Random();		
+		int[] int_array = new int[20];      
+		
+		for (int i = 0; i < 20; i++) {
+			int rand_num = num.nextInt(500);
+			int_array[i] = rand_num;
+		}
+        return int_array[x];
+	}
+	
+	public int int_list(int x) {
+		Random num = new Random();		
+		int[] int_array = new int[20];      
+		
+		for (int i = 0; i < 20; i++) {
+			int rand_num = num.nextInt(500);
+			int_array[i] = rand_num;
+		}
+        return int_array[x];
+	}
+	
+	
+
+	public static String createname() {	
+		char[] character_list = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+				'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+				'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '_' };
+		String[] word_list = { "write", "edit", "collab", "build", "post", "finish", "publish", "private", "fantasy",
+				"fanfic", "lol", "idk", "omarion", "bowtie", "JAR", "code", "owais", "vincent", "archard", "nereus",
+				"wip" };
+		String[] word_list2 = { "Augmented", "Diminished", "Mixolydian", "Lydian", "Aeolian", "Phrygian", "Ionian",
+				"Dorian", "Locrian", "Guitar", "Piano", "Harp", "EGBDF", "FACE", "Strings", "Scherzo", "Rondo",
+				"Sonata", "Fugue", "choral" };
+
+
+		String result = "O" + word_list[int_list(0)] + character_list[int_list(1)];
+
+		
+		return result;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(createname());
+		
+//		try {
+//			PrintWriter write_file = new PrintWriter("testfile.txt", "UTF-8");
+//			int x = 1;
+//			while (x < 11) {
+//				write_file.println(x + "\t" + createname());
+//				x++;
+//			}
+//			write_file.close();
+//		}
+//
+//		catch (Exception e) {
+//			e.getMessage();
+//		}
+	}
+}
+
+/*
+ * // USING A LOOP INSTEAD // LIBRARY OF LETTERS AND WORDS char[] character_list
+ * = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+ * 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C',
+ * 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+ * 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; String[] word_list = { "write",
+ * "edit", "collab", "build", "post", "finish", "publish", "private", "fantasy",
+ * "fanfic", "lol", "idk", "omarion", "bowtie", "JAR" }; // RANDOM INDEX NUMBER
+ * AND RANDOM DICTIONARY WORD Random rand = new Random(); int word_index =
+ * rand.nextInt(word_list.length); // SELECTION OF DICTIONARY WORD FROM
+ * DICTIONARY ARRAY System.out.print("O"+word_list[word_index]); // FILENAME
+ * GENERATION for( int j=0;j<4;j++) { int char_index =
+ * rand.nextInt(character_list.length);
+ * System.out.print(character_list[char_index]); System.out.print(char_index); }
+ * }
+ */
