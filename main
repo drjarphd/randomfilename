@@ -1,59 +1,48 @@
-package randomnumber;
+package randomfilename;
 
 import java.util.*;
 import java.io.*;
 
-public class firsttry_simplify {	
-
-	public int int_list2(int x) {
+public class randname{
+	public static int int_list(int x) {
 		Random num = new Random();		
 		int[] int_array = new int[20];      
 		
 		for (int i = 0; i < 20; i++) {
-			int rand_num = num.nextInt(500);
+			int rand_num = num.nextInt(52);
 			int_array[i] = rand_num;
 		}
         return int_array[x];
 	}
-	
-	public int int_list(int x) {
-		Random num = new Random();		
-		int[] int_array = new int[20];      
-		
-		for (int i = 0; i < 20; i++) {
-			int rand_num = num.nextInt(500);
-			int_array[i] = rand_num;
-		}
-        return int_array[x];
-	}
-	
-	
 
 	public static String createname() {	
 		char[] character_list = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
 				'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 				'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '_' };
-		String[] word_list = { "write", "edit", "collab", "build", "post", "finish", "publish", "private", "fantasy",
-				"fanfic", "lol", "idk", "omarion", "bowtie", "JAR", "code", "owais", "vincent", "archard", "nereus",
-				"wip" };
-		String[] word_list2 = { "Augmented", "Diminished", "Mixolydian", "Lydian", "Aeolian", "Phrygian", "Ionian",
-				"Dorian", "Locrian", "Guitar", "Piano", "Harp", "EGBDF", "FACE", "Strings", "Scherzo", "Rondo",
-				"Sonata", "Fugue", "choral" };
+	
+        String[] word_list = { "write", "edit", "collab", "build", "post", "finish", "publish", "private", "fantasy",
+				"fanfic" /*10*/, "lol", "idk", "omarion", "bowtie", "JAR", "code", "owais", "vincent", "archard", "nereus",
+				/*20*/ "wip", "Augmented", "Diminished", "Mixolydian", "Lydian", "Aeolian", "Phrygian", "Ionian",
+				"Dorian" /*30*/, "Locrian", "Guitar", "Piano", "Harp", "EGBDF", "FACE", "Strings", "Scherzo", "Rondo",
+				"Sonata" /*40*/, "Fugue", "choral","train","planes","automobiles","lions","tigers","Bears", "bears",
+                /*50*/ "nature","Sox","primal","justincase"};
 
-
-		String result = "O" + word_list[int_list(0)] + character_list[int_list(1)];
-
-		
+		String result = "O" + word_list[int_list(0)] + character_list[int_list(1)] + 
+				int_list(2) + character_list[int_list(3)] + int_list(4) + 
+				character_list[int_list(5)] + int_list(6) + 
+				character_list[int_list(7)] + int_list(8) + int_list(9);
 		return result;
 	}
 
 	public static void main(String[] args) {
+//		// For Testing Purposes
 		System.out.println(createname());
 		
+//		// Writing to a file
 //		try {
-//			PrintWriter write_file = new PrintWriter("testfile.txt", "UTF-8");
+//			PrintWriter write_file = new PrintWriter("randfile_output.txt", "UTF-8");
 //			int x = 1;
-//			while (x < 11) {
+//			while (x <= 10000) {
 //				write_file.println(x + "\t" + createname());
 //				x++;
 //			}
@@ -65,20 +54,3 @@ public class firsttry_simplify {
 //		}
 	}
 }
-
-/*
- * // USING A LOOP INSTEAD // LIBRARY OF LETTERS AND WORDS char[] character_list
- * = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
- * 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C',
- * 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
- * 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; String[] word_list = { "write",
- * "edit", "collab", "build", "post", "finish", "publish", "private", "fantasy",
- * "fanfic", "lol", "idk", "omarion", "bowtie", "JAR" }; // RANDOM INDEX NUMBER
- * AND RANDOM DICTIONARY WORD Random rand = new Random(); int word_index =
- * rand.nextInt(word_list.length); // SELECTION OF DICTIONARY WORD FROM
- * DICTIONARY ARRAY System.out.print("O"+word_list[word_index]); // FILENAME
- * GENERATION for( int j=0;j<4;j++) { int char_index =
- * rand.nextInt(character_list.length);
- * System.out.print(character_list[char_index]); System.out.print(char_index); }
- * }
- */
